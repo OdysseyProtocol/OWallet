@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OCoinWalletApp</string>
+    <string name="create_new_wallet">Create New Wallet</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="fixed_trading">Fixed trading</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

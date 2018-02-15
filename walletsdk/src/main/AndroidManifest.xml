@@ -1,0 +1,120 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="rehanced.com.simpleetherwallet">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Used for Importing / Exporting Wallets -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Used for QR Code scanning -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Used for optional Applock Feature -->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.ocoin.activities.WalletMainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ocoin.activities.AddressDetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name="com.ocoin.activities.QRScanActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name="com.ocoin.activities.SettingsActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.ocoin.activities.WalletGenActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name="com.ocoin.activities.RequestEtherActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name="com.ocoin.activities.SendActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.NoActionBar2"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.ocoin.activities.AppIntroActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name="com.ocoin.activities.PrivateKeyActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name="com.ocoin.activities.AppLockActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name="com.ocoin.activities.SetAppLockActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar2">
+            <intent-filter>
+                <action android:name="rehanced.com.simpleetherwallet.activities.SetAppLockActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.ocoin.receiver.BootReceiver"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.ocoin.services.NotificationService"
+            android:exported="false" />
+
+        <service
+            android:name="com.ocoin.services.WalletGenService"
+            android:exported="false" />
+        <service
+            android:name="com.ocoin.services.TransactionService"
+            android:exported="false" />
+    </application>
+
+</manifest>

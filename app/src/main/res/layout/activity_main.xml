@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_dark"
+    android:orientation="vertical"
+    tools:context="com.ocoin.demo.BankActivity">
+
+
+    <Button
+        android:id="@+id/btn_generate_new_wallet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_new_wallet"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_get_eth_coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_wallet"
+        android:textAllCaps="false" />
+
+
+    <Button
+        android:id="@+id/btn_transaction_ocn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OCN Transaction" />
+
+    <Button
+        android:id="@+id/btn_transaction_eth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="ETH Transaction"
+        android:textAllCaps="false" />
+
+
+    <Button
+        android:id="@+id/btn_transaction_specify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fixed_trading"
+        android:textAllCaps="false" />
+
+
+</LinearLayout>
